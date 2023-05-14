@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  apirest-proyecto:
+    container_name: apirest-proyecto
+    image: apirest-proyecto:v1
+    build:
+      context: .
+    ports:
+      - "3002:3002"
+    networks:
+      - proyectos-app
+networks:
+  proyectos-app:

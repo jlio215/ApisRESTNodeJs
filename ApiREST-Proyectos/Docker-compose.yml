@@ -7,6 +7,16 @@ services:
       context: .
     ports:
       - "3002:3002"
+      - "3003:3002"
+    networks:
+      - proyectos-app
+  balanceador-carga:
+    container_name: balanceador-carga
+    image: balanceador-carga:v1
+    build:
+      context: ./balanceador
+    ports:
+      - "3004:80"
     networks:
       - proyectos-app
 networks:
